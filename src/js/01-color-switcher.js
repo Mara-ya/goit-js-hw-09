@@ -4,6 +4,7 @@ function getRandomHexColor() {
 
 const btnStart = document.querySelector('[data-start]');
 const btnStop = document.querySelector('[data-stop]');
+let timerId = null;
 btnStop.disabled = true;
 btnStart.addEventListener('click', () =>{
     timerId = setInterval(() => {
@@ -15,9 +16,7 @@ btnStart.addEventListener('click', () =>{
 });
 
 btnStop.addEventListener('click', () =>{
-//     if (timerId){
-        clearInterval(timerId);
-        btnStart.disabled = false;
-        btnStop.disabled = true;
-//     }
+    clearInterval(timerId);
+    btnStart.disabled = false;
+    btnStop.disabled = true;
 });
