@@ -32,15 +32,15 @@ const options = {
 
 refs.btnStart.disabled = true;
 
-flatpickr(refs.input, options)
+flatpickr(refs.input, options);
 
 refs.btnStart.addEventListener('click', onLeftTime)
 
 function onLeftTime (){
     const timerId = setInterval(() => {
-        left = scheduledTime - new Date() - 1000
-        const convertTime = convertMs(left)
-        outputDate(convertTime)
+        left = scheduledTime - new Date();
+        const convertTime = convertMs(left);
+        outputDate(convertTime);
         refs.btnStart.disabled = true;
 
         if (refs.daysLeft.textContent === '0' &&
